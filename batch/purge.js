@@ -6,6 +6,8 @@ exports.purgeRecords = ()=>{
     let purgeWindowEnd = currentTimeStamp - 1000 * 60 * 30;
     purgeWindowStart = parseInt(purgeWindowStart / 1000);
     purgeWindowEnd = parseInt(purgeWindowEnd / 1000);
+    console.log('purge window ', purgeWindowStart, purgeWindowEnd);
+    let fileNames = [];
     for (let i = purgeWindowStart; i < purgeWindowEnd; i++) {
         let prefix = i+ "";
         let part = prefix.substring(prefix.length - 1);
@@ -18,6 +20,7 @@ exports.purgeRecords = ()=>{
     fileNames.forEach((fullName) => {
         fs.unlinkSync(fullName);
     });
+    console.log('purge complete ');
 };
 
 let getPartition = (timestamp) => {
