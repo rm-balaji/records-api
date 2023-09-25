@@ -19,4 +19,4 @@
 - Type 'npm start' to start the server 
 
  ### step 7:  ###
-- use test-scripts/recordsApp-soapui-project.xml 
+- use test-scripts/recordsApp-soapui-project.xml to test the application
